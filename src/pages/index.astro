@@ -1,0 +1,55 @@
+---
+import "../styles/global.css";
+import '@fontsource/atkinson-hyperlegible/400.css';
+import '@fontsource/atkinson-hyperlegible/700.css';
+
+import { Image } from 'astro:assets';
+import { getCollection } from 'astro:content';
+import Ccicon from "../components/CC-Icon.astro";
+
+const allImages = await getCollection("images");
+---
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<title>Astro</title>
+	</head>
+	<body class="max-5xl:container mx-auto bg-secondary text-secondary-content font-display">
+		<section class="px-2 py-4 columns-sm gap-8">
+		{
+			allImages.map(image => (
+				<div>
+					<figure class="break-inside-avoid mb-4 rounded-xs shadow bg-primary text-primary-content border-primary border-y-4">
+						{image.data.title &&
+							<h2 class="px-6 py-2 text-2xl capitalize">{image.data.title}</h2>
+						}
+						<Image src={image.data.image} alt={image.data.description ?? "no image description provided"}
+							   widths={[200, 600, image.data.image.width]} />
+						<figcaption class="p-6 pt-2">
+							{image.data.author &&
+								(image.data.src ?
+									<span>
+										Image by
+										<a class="underline active:text-accent" href={image.data.src}
+										   target="_blank">{image.data.author}</a>
+									</span> :
+									<span>Image by {image.data.author}</span>)
+							}
+
+							{image.data.license &&
+								<span class="flex gap-1 mt-1" title={`Licensed under ${image.data.license.toUpperCase()}`}>
+									<Ccicon type={image.data.license} />
+								</span>
+							}
+						</figcaption>
+					</figure>
+				</div>
+			))
+		}
+		</section>
+	</body>
+</html>
