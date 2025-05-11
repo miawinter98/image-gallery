@@ -42,7 +42,7 @@ const allImages = await getCollection("images");
 
 							{image.data.license &&
 								<span class="flex gap-1 mt-1" title={`Licensed under ${image.data.license.toUpperCase()}`}>
-									<Ccicon type={image.data.license} />
+									<Ccicon type={image.data.license.toLowerCase()} />
 								</span>
 							}
 						</figcaption>
