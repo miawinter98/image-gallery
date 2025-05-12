@@ -28,7 +28,8 @@ const allImages = await getCollection("images");
 							<h2 class="px-6 py-2 text-2xl capitalize">{image.data.title}</h2>
 						}
 						<Image src={image.data.image} alt={image.data.description ?? "no image description provided"}
-							   widths={[200, 600, image.data.image.width]} />
+							   widths={[400, 1200, image.data.image.width]}
+							   sizes={`(max-width: 720px) 400px, (max-width: 2000px) 1200px, ${image.data.image.width}px`} />
 						<figcaption class="p-6 pt-2">
 							{image.data.author &&
 								(image.data.src ?
