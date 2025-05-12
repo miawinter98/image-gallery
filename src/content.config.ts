@@ -12,6 +12,7 @@ const images = defineCollection({
             title: z.string().optional(),
             license: z.string().optional(),
             image: image(),
+            tags: z.array(z.string()).optional()
         })
 });
 

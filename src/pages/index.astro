@@ -41,11 +41,20 @@ const allImages = await getCollection("images");
 									<span>Image by {image.data.author}</span>)
 							}
 
-							{image.data.license &&
-								<span class="flex gap-1 mt-1" title={`Licensed under ${image.data.license.toUpperCase()}`}>
-									<Ccicon type={image.data.license.toLowerCase()} />
-								</span>
-							}
+							<span class="flex gap-1 flex-wrap mt-1 -mb-2">
+								{image.data.license &&
+									<span class="flex gap-1" title={`Licensed under ${image.data.license.toUpperCase()}`}>
+										<Ccicon type={image.data.license.toLowerCase()} />
+									</span>
+								}
+
+								{image.data.tags && image.data.tags.map(tag =>
+										<span class="bg-accent text-accent-content py-.5 px-2 h-6 text-xs rounded-full grid place-items-center">
+											{tag}
+										</span>
+									)
+								}
+							</span>
 						</figcaption>
 					</figure>
 				</div>

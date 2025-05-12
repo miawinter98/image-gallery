@@ -22,7 +22,11 @@ For an image to be added to the page, it needs a meta file (.json). The meta fil
   "author": "Mia Rose Winter",
   "src": "https://miawinter.de/img/hamburg_by_mia_winter.jpg",
   "description": "A river canal in the German city of Hamburg, with adjacent houses on both sides",
-  "license": "cc by-sa"
+  "license": "cc by-sa",
+  "tags": [
+    "Hamburg",
+    "Huawei P40"
+  ]
 }
 ```
 
@@ -34,6 +38,7 @@ For an image to be added to the page, it needs a meta file (.json). The meta fil
 * `license`: The License under which that image is published. 
   Refer to [CC Licenses](https://creativecommons.org/share-your-work/cclicenses/). May be any string but CC
   terms are parsed as neat little svg images
+* `tags`: A list of tags to assign to that image, will be rendered as little badges
 
 As you can see anything but "image" is optional.
 

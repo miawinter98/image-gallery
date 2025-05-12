@@ -34,4 +34,5 @@
     --color-secondary-content: var(--color-secondary-content);
     --color-background: var(--color-background);
     --color-accent: var(--color-accent);
+    --color-accent-content: var(--color-accent-content);
 }
