@@ -59,6 +59,10 @@ can add additional properties like author with `--author` or license with `--lic
 
 run `--help` for a list of all supported command line arguments
 
+## Configuration
+
+Some settings for the generated page, like the title of it, can be adjusted in the `src/config.yml` file
+
 ## License
 
 This repository is licensed under EUPL 1.2

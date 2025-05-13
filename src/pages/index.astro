@@ -3,6 +3,7 @@ import "../styles/global.css";
 import '@fontsource/atkinson-hyperlegible/400.css';
 import '@fontsource/atkinson-hyperlegible/700.css';
 
+import config from "../config.yml";
 import { Image } from 'astro:assets';
 import { getCollection } from 'astro:content';
 import Ccicon from "../components/CC-Icon.astro";
@@ -16,7 +17,7 @@ const allImages = await getCollection("images");
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
+		<title>{config.site.title}</title>
 	</head>
 	<body class="max-5xl:container mx-auto bg-secondary text-secondary-content font-display">
 		<section class="px-2 py-4 columns-sm gap-8">
