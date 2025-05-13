@@ -1,1 +1,1 @@
-.\batch-create.py .\batch-image-example\ -v -a Mia Rose Winter -c CC BY-SA
+.\batch-create.py .\batch-image-example\ -v -a Mia Rose Winter -c CC BY-SA --tags Hamburg, Huawei P40

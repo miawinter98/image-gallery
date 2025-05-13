@@ -14,6 +14,7 @@ if __name__ == '__main__':
     parser.add_argument('-v', '--verbose', action='store_true')
     parser.add_argument('-a', '--author', help="the author of these images")
     parser.add_argument('-s', '--source', help="a link for where to find that image from the author")
+    parser.add_argument('-t', '--tags', help="tags to add to all images (comma separated list)")
     parser.add_argument('-cc', '--license', help="the license to use, like CC BY-SA (look up creative commons for details)")
 
     args = parser.parse_args()
@@ -41,6 +42,8 @@ if __name__ == '__main__':
             "src": args.source,
             "license": args.license
         }
+        if args.tags:
+            data["tags"] = [x.strip() for x in args.tags.split(',')]
         with open(jsonFile, "w") as j:
             json.dump({k: v for k, v in data.items() if v is not None}, j, indent=4)
         counter += 1
