@@ -1,6 +1,7 @@
 interface Configuration {
     site: {
-        title: string
+        title: string,
+        theme?: string
     }
 }
 

@@ -11,7 +11,7 @@ import Ccicon from "../components/CC-Icon.astro";
 const allImages = await getCollection("images");
 ---
 
-<html lang="en">
+<html lang="en" data-theme={config.site.theme}>
 	<head>
 		<meta charset="utf-8" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />

@@ -1,3 +1,9 @@
 site:
   title: "Image Gallery"
+  theme: default
 
+# list of themes
+# --------------
+#
+# default: the green-mocha default theme
+# simple: a simple black and white theme
