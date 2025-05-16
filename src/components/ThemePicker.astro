@@ -1,0 +1,36 @@
+---
+
+---
+
+<form class="rounded-xs overflow-hidden flex">
+    <label class="bg-accent text-accent-content p-1 w-24 text-center select-none" for="theme-picker">
+        Theme
+    </label>
+    <select class="bg-primary text-primary-content p-1 w-36 text-center" id="theme-picker">
+        <option value="default" selected>Default</option>
+        <option value="simple">Simple</option>
+        <option value="bubblegum">Bubblegum</option>
+    </select>
+</form>
+
+<script>
+    function onThemeChange(event: Event) {
+        const element = event.currentTarget as HTMLSelectElement;
+        if (element && element.value)
+            document.documentElement.dataset.theme = element.value;
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+        const theme = document.documentElement.dataset.theme;
+
+        if (theme) {
+            const activeOption = document.querySelector(`select > option[value=${theme}]`) as HTMLOptionElement | undefined;
+            if (activeOption) activeOption.selected = true;
+        }
+
+        const themePicker = document.getElementById("theme-picker");
+        if (themePicker) {
+            themePicker.addEventListener("change", onThemeChange)
+        }
+    });
+</script>

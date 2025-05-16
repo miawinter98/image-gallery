@@ -1,6 +1,7 @@
 site:
   title: "Image Gallery"
   theme: default
+  themePicker: enabled
 
 # list of themes
 # --------------

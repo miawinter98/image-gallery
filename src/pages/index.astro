@@ -8,6 +8,7 @@ import config from "../config.yml";
 import { Image } from 'astro:assets';
 import { getCollection } from 'astro:content';
 import Ccicon from "../components/CC-Icon.astro";
+import ThemePicker from "../components/ThemePicker.astro"
 
 const allImages = await getCollection("images");
 ---
@@ -63,5 +64,10 @@ const allImages = await getCollection("images");
 			))
 		}
 		</main>
+		{config.site.themePicker === "enabled" &&
+			<footer class="grid place-items-center md:place-items-end py-2">
+				<ThemePicker />
+			</footer>
+		}
 	</body>
 </html>

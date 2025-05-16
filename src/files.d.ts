@@ -1,7 +1,8 @@
 interface Configuration {
     site: {
         title: string,
-        theme?: string
+        theme?: string,
+        themePicker: "enabled" | "disabled"
     }
 }
 
