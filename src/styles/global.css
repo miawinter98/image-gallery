@@ -18,6 +18,15 @@
     --color-accent-content: white;
 }
 
+[data-theme="bubblegum"] {
+    --color-primary: oklch(0.763 0.133 242.445);
+    --color-primary-content: black;
+    --color-secondary: white;
+    --color-secondary-content: black;
+    --color-accent: oklch(0.702 0.147 0.657);
+    --color-accent-content: black;
+}
+
 @media (prefers-color-scheme: dark) {
     :root {
         --color-primary: oklch(0.414 0.046 124.345);
@@ -34,6 +43,15 @@
         --color-secondary: black;
         --color-secondary-content: white;
         --color-accent: black;
+        --color-accent-content: white;
+    }
+
+    [data-theme="bubblegum"] {
+        --color-primary: oklch(0.389 0.106 248.403);
+        --color-primary-content: white;
+        --color-secondary: oklch(0.145 0 89.876);
+        --color-secondary-content: white;
+        --color-accent: oklch(0.495 0.179 8.024);
         --color-accent-content: white;
     }
 }
