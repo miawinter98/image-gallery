@@ -15,7 +15,7 @@ const allImages = await getCollection("images");
 <html lang="en" data-theme={config.site.theme}>
 	<head>
 		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href={`${base}favicon.svg`} />
+		<link rel="icon" type="image/svg+xml" href={`${base.endsWith("/") ? base : base + "/"}favicon.svg`} />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
 		<title>{config.site.title}</title>
