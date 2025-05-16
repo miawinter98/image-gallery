@@ -70,6 +70,12 @@ In case you want to use some other deployment tech, here is how the project itse
 1. Running `npm run build` using node 20 or later
 2. Serving folder `dist`
 
+## Docker
+
+There is a `Dockerfile` in the Project root you can use to build a containerized of the site. It will run lighttpd and
+can be configured with a base path through adding `BASE` as a build argument. For more information on configuring that
+see [docker-lighttpd](https://github.com/rtsp/docker-lighttpd).
+
 ## License
 
 This repository is licensed under EUPL 1.2
