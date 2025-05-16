@@ -63,6 +63,13 @@ run `--help` for a list of all supported command line arguments
 
 Some settings for the generated page, like the title of it, can be adjusted in the `src/config.yml` file
 
+## Build without GitHub Pages
+
+In case you want to use some other deployment tech, here is how the project itself is build:
+
+1. Running `npm run build` using node 20 or later
+2. Serving folder `dist`
+
 ## License
 
 This repository is licensed under EUPL 1.2
